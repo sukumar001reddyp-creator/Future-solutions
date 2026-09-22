@@ -1,0 +1,320 @@
+{% extends "base.html" %}
+{% block title %}Future Solutions | Global Logistics & Supply Chain Excellence{% endblock %}
+{% block content %}
+
+<!-- ============ FONTS + TAILWIND CONFIG ============ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: '#030811',
+        navy: '#081220',
+        sapphire: '#0E1E34',
+        gold: { DEFAULT: '#D4AF37', light: '#E5C158', hover: '#F3D573' },
+        bone: '#F8FAFC',
+        steel: '#94A3B8'
+      },
+      fontFamily: {
+        serif: ['"Cormorant Garamond"', 'serif'],
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace']
+      }
+    }
+  }
+}
+</script>
+
+<style>
+  /* Native smooth scrolling enabled for buttery performance */
+  html { background: #030811; scroll-behavior: smooth; }
+  body { background: #030811; }
+  ::selection { background: #D4AF37; color: #030811; }
+
+  /* film grain */
+  .grain::after {
+    content: ''; position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: .05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* masked line reveal */
+  .mask-line { overflow: hidden; display: block; }
+  .mask-line > span {
+    display: block; transform: translateY(115%);
+    animation: lineUp 1.1s cubic-bezier(.16,1,.3,1) forwards;
+  }
+  @keyframes lineUp { to { transform: translateY(0); } }
+  .d1 > span { animation-delay: .15s } .d2 > span { animation-delay: .3s }
+  .d3 > span { animation-delay: .45s } .d4 > span { animation-delay: .6s }
+  .d5 > span { animation-delay: .8s }  .d6 > span { animation-delay: .95s }
+
+  .fade-up { opacity: 0; transform: translateY(14px); animation: fadeUp 1s ease .9s forwards; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+  /* scroll reveal */
+  .rv { opacity: 0; transform: translateY(36px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+  .rv.on { opacity: 1; transform: translateY(0); }
+
+  /* slow editorial marquee */
+  .marquee-track { display: flex; width: max-content; animation: marquee 46s linear infinite; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  /* radar pulse */
+  @keyframes radar { 0% { transform: scale(.4); opacity: .8 } 100% { transform: scale(2.4); opacity: 0 } }
+  .radar-ring { animation: radar 3.2s ease-out infinite; }
+
+  /* gold shimmer button */
+  .btn-gold { position: relative; overflow: hidden; }
+  .btn-gold::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.45) 50%, transparent 60%);
+    transform: translateX(-120%); transition: transform .7s ease;
+  }
+  .btn-gold:hover::before { transform: translateX(120%); }
+
+  .img-clip { clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 96%); }
+
+  input, select, textarea { color-scheme: dark; }
+</style>
+
+<div class="grain bg-ink text-bone font-sans antialiased">
+
+<!-- ============ HERO ============ -->
+<section class="relative min-h-screen flex items-center overflow-hidden border-b border-white/10" data-testid="hero-section">
+  <div class="absolute inset-0">
+    <img id="heroImg" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=2000&q=80"
+         alt="Container ship at sea" class="w-full h-[120%] object-cover object-center opacity-30 will-change-transform">
+    <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/20"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(60% 50% at 20% 40%, rgba(212,175,55,.10), transparent 70%)"></div>
+  </div>
+
+  <!-- radar pulse -->
+  <div class="absolute right-[12%] top-[30%] hidden lg:block" aria-hidden="true">
+    <div class="relative w-40 h-40">
+      <div class="radar-ring absolute inset-0 rounded-full border border-gold/40"></div>
+      <div class="radar-ring absolute inset-0 rounded-full border border-gold/30" style="animation-delay:1.1s"></div>
+      <div class="radar-ring absolute inset-0 rounded-full border border-gold/20" style="animation-delay:2.2s"></div>
+      <div class="absolute inset-0 m-auto w-2 h-2 rounded-full bg-gold shadow-[0_0_24px_6px_rgba(212,175,55,.5)]"></div>
+    </div>
+    <p class="font-mono text-[10px] tracking-[0.3em] text-gold/70 mt-6 text-center">25.2048° N — 55.2708° E</p>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pt-32 pb-24 w-full">
+    <div class="max-w-3xl">
+      <span class="mask-line d1">
+        <span class="inline-flex items-center gap-3 border border-gold/30 bg-gold/5 text-gold font-mono text-[11px] uppercase tracking-[0.3em] px-5 py-2 rounded-full" data-testid="hero-badge">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+          Global Freight Forwarding — Est. Trust Worldwide
+        </span>
+      </span>
+
+      <h1 class="mt-8 font-serif font-semibold text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight" data-testid="hero-headline">
+        <span class="mask-line d2"><span>Logistics, engineered</span></span>
+        <span class="mask-line d3"><span>for the weight of</span></span>
+        <span class="mask-line d4"><span class="italic text-gold-light">global trade.</span></span>
+      </h1>
+
+      <span class="mask-line d5">
+        <span class="mt-8 max-w-xl text-steel text-base sm:text-lg leading-relaxed block">
+          Ocean freight, air cargo and bespoke supply chain orchestration — connecting the Middle East, Asia and every major port on the map with unflappable precision.
+        </span>
+      </span>
+
+      <div class="fade-up mt-10 flex flex-col sm:flex-row gap-4">
+        <a href="{{ url_for('quote') }}" data-testid="hero-cta-quote-button"
+           class="btn-gold bg-gold hover:bg-gold-hover text-ink font-bold px-9 py-4 rounded-full text-center tracking-wide transition-colors duration-300 shadow-[0_0_40px_-8px_rgba(212,175,55,.5)]">
+          Request a Quote &rarr;
+        </a>
+        <a href="{{ url_for('services') }}" data-testid="hero-cta-services-button"
+           class="border border-white/15 hover:border-gold/50 bg-white/5 backdrop-blur-md text-bone font-medium px-9 py-4 rounded-full text-center transition-colors duration-300">
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- floating metrics ribbon -->
+  <div class="absolute bottom-0 inset-x-0 z-10 border-t border-white/10 bg-navy/60 backdrop-blur-xl fade-up" data-testid="hero-metrics-ribbon">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 grid grid-cols-2 md:grid-cols-4 divide-x divide-white/5">
+      <div class="py-6 pr-6"><p class="font-mono text-2xl text-gold-light"><span class="counter" data-target="140">0</span>+</p><p class="font-mono text-[10px] uppercase tracking-[0.25em] text-steel mt-1">Ports Connected</p></div>
+      <div class="py-6 px-6"><p class="font-mono text-2xl text-gold-light"><span class="counter" data-target="12">0</span>K</p><p class="font-mono text-[10px] uppercase tracking-[0.25em] text-steel mt-1">TEU Moved / Year</p></div>
+      <div class="py-6 px-6"><p class="font-mono text-2xl text-gold-light"><span class="counter" data-target="99">0</span>.4%</p><p class="font-mono text-[10px] uppercase tracking-[0.25em] text-steel mt-1">On-Time Delivery</p></div>
+      <div class="py-6 pl-6"><p class="font-mono text-2xl text-gold-light"><span class="counter" data-target="24">0</span>/7</p><p class="font-mono text-[10px] uppercase tracking-[0.25em] text-steel mt-1">Control Tower</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDITORIAL MARQUEE ============ -->
+<div class="py-6 border-b border-white/10 bg-ink overflow-hidden" data-testid="editorial-marquee">
+  <div class="marquee-track font-mono text-xs uppercase tracking-[0.35em] text-gold/60">
+    <span class="flex whitespace-nowrap">
+      <span class="mx-8">Ocean Freight</span><span class="text-gold/30">✦</span><span class="mx-8">Air Cargo</span><span class="text-gold/30">✦</span><span class="mx-8">Customs Brokerage</span><span class="text-gold/30">✦</span><span class="mx-8">Supply Chain</span><span class="text-gold/30">✦</span><span class="mx-8">Dubai — Singapore — Shanghai — Rotterdam — Hamburg</span><span class="text-gold/30">✦</span>
+    </span>
+    <span class="flex whitespace-nowrap" aria-hidden="true">
+      <span class="mx-8">Ocean Freight</span><span class="text-gold/30">✦</span><span class="mx-8">Air Cargo</span><span class="text-gold/30">✦</span><span class="mx-8">Customs Brokerage</span><span class="text-gold/30">✦</span><span class="mx-8">Supply Chain</span><span class="text-gold/30">✦</span><span class="mx-8">Dubai — Singapore — Shanghai — Rotterdam — Hamburg</span><span class="text-gold/30">✦</span>
+    </span>
+  </div>
+</div>
+
+<!-- ============ MANIFESTO CHAPTERS ============ -->
+<section class="py-24 lg:py-36" data-testid="manifesto-section">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
+    <p class="rv font-mono text-[11px] uppercase tracking-[0.3em] text-gold/80 mb-16">The Manifesto</p>
+    <div class="space-y-20">
+      <div class="rv grid lg:grid-cols-12 gap-8 items-baseline border-t border-white/10 pt-10">
+        <span class="lg:col-span-2 font-mono text-gold/50 text-sm">01</span>
+        <h2 class="lg:col-span-6 font-serif text-3xl sm:text-4xl lg:text-5xl leading-tight">Cargo is a promise. <span class="italic text-gold-light">We keep it.</span></h2>
+        <p class="lg:col-span-4 text-steel leading-relaxed">Every container we move carries someone's deadline, someone's reputation. Our routes are engineered so neither ever breaks.</p>
+      </div>
+      <div class="rv grid lg:grid-cols-12 gap-8 items-baseline border-t border-white/10 pt-10">
+        <span class="lg:col-span-2 font-mono text-gold/50 text-sm">02</span>
+        <h2 class="lg:col-span-6 font-serif text-3xl sm:text-4xl lg:text-5xl leading-tight">Precision over <span class="italic text-gold-light">promises.</span></h2>
+        <p class="lg:col-span-4 text-steel leading-relaxed">Live tracking, bonded warehousing and a 24/7 control tower — because "somewhere at sea" is never an acceptable answer.</p>
+      </div>
+      <div class="rv grid lg:grid-cols-12 gap-8 items-baseline border-t border-white/10 pt-10">
+        <span class="lg:col-span-2 font-mono text-gold/50 text-sm">03</span>
+        <h2 class="lg:col-span-6 font-serif text-3xl sm:text-4xl lg:text-5xl leading-tight">The world, <span class="italic text-gold-light">one port away.</span></h2>
+        <p class="lg:col-span-4 text-steel leading-relaxed">From Jebel Ali to Rotterdam, our carrier alliances put 140+ ports within a single phone call of your loading dock.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="py-24 lg:py-32 bg-navy border-y border-white/10" data-testid="services-section">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
+    <div class="rv flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-gold/80 mb-4">04 — Capabilities</p>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl">Three disciplines.<br><span class="italic text-gold-light">One standard.</span></h2>
+      </div>
+      <a href="{{ url_for('services') }}" data-testid="services-view-all-link" class="font-mono text-xs uppercase tracking-[0.25em] text-gold hover:text-gold-hover transition-colors">View all services &rarr;</a>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="{{ url_for('services') }}" data-testid="service-card-ocean-freight" class="rv group relative overflow-hidden rounded-2xl border border-white/10 hover:border-gold/50 transition-colors duration-500 bg-sapphire/40">
+        <div class="h-64 overflow-hidden">
+          <img src="https://images.pexels.com/photos/262353/pexels-photo-262353.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Ocean freight containers" class="w-full h-full object-cover img-clip group-hover:scale-105 transition-transform duration-700 opacity-80">
+        </div>
+        <div class="p-8">
+          <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-gold/70 mb-3">Sea — FCL / LCL</p>
+          <h3 class="font-serif text-2xl mb-3">Ocean Freight</h3>
+          <p class="text-steel text-sm leading-relaxed">Full and consolidated container loads across every major trade lane, with priority berth agreements at hub ports.</p>
+        </div>
+      </a>
+      <a href="{{ url_for('services') }}" data-testid="service-card-air-cargo" class="rv group relative overflow-hidden rounded-2xl border border-white/10 hover:border-gold/50 transition-colors duration-500 bg-sapphire/40" style="transition-delay:.1s">
+        <div class="h-64 overflow-hidden">
+          <img src="https://images.pexels.com/photos/9861441/pexels-photo-9861441.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Air cargo aircraft" class="w-full h-full object-cover img-clip group-hover:scale-105 transition-transform duration-700 opacity-80">
+        </div>
+        <div class="p-8">
+          <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-gold/70 mb-3">Air — Express / Charter</p>
+          <h3 class="font-serif text-2xl mb-3">Air Cargo</h3>
+          <p class="text-steel text-sm leading-relaxed">Time-critical uplift on premium carriers, full charters for oversized loads, and cold-chain handling end to end.</p>
+        </div>
+      </a>
+      <a href="{{ url_for('services') }}" data-testid="service-card-supply-chain" class="rv group relative overflow-hidden rounded-2xl border border-white/10 hover:border-gold/50 transition-colors duration-500 bg-sapphire/40" style="transition-delay:.2s">
+        <div class="h-64 overflow-hidden">
+          <img src="https://images.pexels.com/photos/13876671/pexels-photo-13876671.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Port terminal at dusk" class="w-full h-full object-cover img-clip group-hover:scale-105 transition-transform duration-700 opacity-80">
+        </div>
+        <div class="p-8">
+          <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-gold/70 mb-3">Bespoke — End to End</p>
+          <h3 class="font-serif text-2xl mb-3">Supply Chain</h3>
+          <p class="text-steel text-sm leading-relaxed">Warehousing, customs brokerage and last-mile orchestration, designed around your cargo — not our template.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GLOBAL COVERAGE ============ -->
+<section class="py-24 lg:py-36" data-testid="coverage-section">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="rv lg:col-span-5">
+      <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-gold/80 mb-4">05 — Coverage</p>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">Where we <span class="italic text-gold-light">call home port.</span></h2>
+      <p class="text-steel leading-relaxed mb-10">Strategic hubs across the Middle East and Asia, bonded to partner terminals on every continent.</p>
+      <ul class="space-y-4 font-mono text-sm">
+        <li class="flex justify-between border-b border-white/10 pb-3"><span>Dubai — Jebel Ali</span><span class="text-gold/70">25.20° N</span></li>
+        <li class="flex justify-between border-b border-white/10 pb-3"><span>Singapore</span><span class="text-gold/70">01.35° N</span></li>
+        <li class="flex justify-between border-b border-white/10 pb-3"><span>Shanghai — Yangshan</span><span class="text-gold/70">31.23° N</span></li>
+        <li class="flex justify-between border-b border-white/10 pb-3"><span>Rotterdam</span><span class="text-gold/70">51.95° N</span></li>
+        <li class="flex justify-between border-b border-white/10 pb-3"><span>Hamburg</span><span class="text-gold/70">53.54° N</span></li>
+      </ul>
+    </div>
+    <div class="rv lg:col-span-7 relative">
+      <div class="absolute -inset-8 rounded-full" style="background: radial-gradient(50% 50% at 50% 50%, rgba(212,175,55,.08), transparent 70%)"></div>
+      <img src="https://images.unsplash.com/photo-1700777685830-f501e67260e6?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Global shipping terminal" class="relative rounded-2xl border border-white/10 object-cover w-full h-[420px] opacity-90">
+      <div class="absolute bottom-6 left-6 bg-ink/70 backdrop-blur-xl border border-gold/30 rounded-xl px-5 py-3">
+        <p class="font-mono text-[10px] uppercase tracking-[0.25em] text-gold">Live Network</p>
+        <p class="font-mono text-sm text-bone mt-1">140+ ports &middot; 6 continents</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIAL ============ -->
+<section class="py-24 lg:py-32 bg-navy border-y border-white/10" data-testid="testimonials-section">
+  <div class="max-w-4xl mx-auto px-6 sm:px-12 text-center">
+    <p class="rv font-mono text-[11px] uppercase tracking-[0.3em] text-gold/80 mb-10">06 — In their words</p>
+    <blockquote class="rv font-serif text-3xl sm:text-4xl lg:text-5xl leading-snug">
+      &ldquo;They moved our entire product line across three continents without a single missed window. <span class="italic text-gold-light">That has never happened before.</span>&rdquo;
+    </blockquote>
+    <p class="rv mt-8 font-mono text-xs uppercase tracking-[0.25em] text-steel">Operations Director — Regional FMCG Group, Dubai</p>
+  </div>
+</section>
+
+<!-- ============ QUOTE CTA ============ -->
+<section class="py-24 lg:py-36 relative overflow-hidden" data-testid="quote-cta-section">
+  <div class="absolute inset-0" style="background: radial-gradient(50% 60% at 50% 100%, rgba(212,175,55,.10), transparent 70%)"></div>
+  <div class="relative max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 text-center">
+    <p class="rv font-mono text-[11px] uppercase tracking-[0.3em] text-gold/80 mb-6">07 — Begin</p>
+    <h2 class="rv font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight">Your cargo deserves<br><span class="italic text-gold-light">a first-class passage.</span></h2>
+    <p class="rv mt-6 text-steel max-w-xl mx-auto">Tell us the route and the deadline. A senior freight specialist replies within one business hour.</p>
+    <div class="rv mt-10">
+      <a href="{{ url_for('quote') }}" data-testid="quote-cta-button" class="btn-gold inline-block bg-gold hover:bg-gold-hover text-ink font-bold px-12 py-5 rounded-full tracking-wide transition-colors duration-300 shadow-[0_0_50px_-8px_rgba(212,175,55,.55)]">
+        Request a Quote &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script>
+  /* Optimized lightweight scroll parallax */
+  const heroImg = document.getElementById('heroImg');
+  window.addEventListener('scroll', () => {
+    if (heroImg) {
+      const scrollY = window.scrollY;
+      if (scrollY < window.innerHeight) {
+        heroImg.style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
+      }
+    }
+  }, { passive: true });
+
+  /* scroll reveals */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  /* animated counters */
+  const cio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.target, t0 = performance.now();
+      (function tick(t) {
+        const p = Math.min((t - t0) / 1600, 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+      cio.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter').forEach(el => cio.observe(el));
+</script>
+
+{% endblock %}

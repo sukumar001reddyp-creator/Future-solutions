@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}{{ service.title }} | Future Solutions{% endblock %}
+{% block content %}
+<div class="grain bg-ink text-bone font-sans antialiased py-24 lg:py-36 min-h-[85vh] flex items-center">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 w-full">
+        
+        <!-- Back Link -->
+        <div class="mb-10">
+            <a href="{{ url_for('services') }}" class="font-mono text-xs uppercase tracking-[0.25em] text-gold hover:text-gold-hover inline-flex items-center gap-2">&larr; Back to Services</a>
+        </div>
+
+        <!-- Side-by-Side Layout Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Side: Featured Image with Luxury Glow & Grain -->
+            <div class="lg:col-span-6 relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-gold to-amber-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl h-80 sm:h-[450px] bg-navy">
+                    <img src="{{ service.image }}" alt="{{ service.title }}" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
+                </div>
+            </div>
+
+            <!-- Right Side: Content & CTA -->
+            <div class="lg:col-span-6 space-y-6">
+                <span class="inline-flex items-center gap-2 border border-gold/30 bg-gold/5 text-gold font-mono text-[11px] uppercase tracking-[0.3em] px-4 py-1.5 rounded-full">
+                    Enterprise Service
+                </span>
+                
+                <h1 class="font-serif font-semibold text-3xl sm:text-4xl lg:text-5xl text-bone tracking-tight leading-tight">
+                    {{ service.title }}
+                </h1>
+                
+                <p class="text-gold-light text-base sm:text-lg font-medium">
+                    {{ service.subtitle }}
+                </p>
+
+                <p class="text-steel text-base leading-relaxed">
+                    {{ service.description }}
+                </p>
+
+                <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <a href="{{ url_for('quote') }}" class="btn-gold bg-gold hover:bg-gold-hover text-ink font-bold px-8 py-4 rounded-xl transition-all shadow-[0_0_35px_-8px_rgba(212,175,55,.45)] flex items-center justify-center gap-2 tracking-wide">
+                        Request a Quote for This Service &rarr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}

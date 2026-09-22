@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Contact Us | Future Solutions{% endblock %}
+{% block content %}
+<div class="grain bg-ink text-bone font-sans antialiased py-24 lg:py-36 min-h-[85vh]">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Info with Mask/Fade Animations -->
+            <div class="lg:col-span-6 space-y-6">
+                <span class="inline-flex items-center gap-2 border border-gold/30 bg-gold/5 text-gold font-mono text-[11px] uppercase tracking-[0.3em] px-4 py-1.5 rounded-full">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span> Get in Touch
+                </span>
+                <h1 class="font-serif font-semibold text-4xl sm:text-5xl leading-tight">
+                    Let's Discuss Your <span class="italic text-gold-light">Supply Chain Needs.</span>
+                </h1>
+                <p class="text-steel text-base leading-relaxed">
+                    Have questions about container shipping, air cargo rates, or customs compliance? Reach out to our global logistics team today.
+                </p>
+
+                <div class="space-y-4 pt-4 text-steel">
+                    <div class="rv flex items-center gap-4 bg-navy/60 border border-white/10 p-5 rounded-2xl backdrop-blur-md">
+                        <span class="text-gold text-xl">📍</span>
+                        <div>
+                            <strong class="block text-bone text-sm">Global Headquarters</strong>
+                            <span class="text-xs text-steel">Shuwaikh Port District, Kuwait City</span>
+                        </div>
+                    </div>
+                    <div class="rv flex items-center gap-4 bg-navy/60 border border-white/10 p-5 rounded-2xl backdrop-blur-md" style="transition-delay: .1s">
+                        <span class="text-gold text-xl">📧</span>
+                        <div>
+                            <strong class="block text-bone text-sm">Email Support</strong>
+                            <span class="text-xs text-steel">ops@futuresolutions-logistics.com</span>
+                        </div>
+                    </div>
+                    <div class="rv flex items-center gap-4 bg-navy/60 border border-white/10 p-5 rounded-2xl backdrop-blur-md" style="transition-delay: .2s">
+                        <span class="text-gold text-xl">📞</span>
+                        <div>
+                            <strong class="block text-bone text-sm">Direct Line</strong>
+                            <span class="text-xs text-steel">+965 2200 4000 / +971 4 300 5000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Form Box with Gold Shimmer Button -->
+            <div class="lg:col-span-6 bg-navy/80 border border-white/10 rounded-3xl p-8 sm:p-10 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <h3 class="font-serif text-2xl font-bold text-bone mb-6">Send Us a Message</h3>
+                <form action="#" method="POST" class="space-y-5">
+                    <div>
+                        <label class="block font-mono text-[10px] uppercase tracking-[0.2em] text-steel mb-2">Your Name</label>
+                        <input type="text" placeholder="John Smith" required class="w-full bg-ink border border-white/15 rounded-xl px-4 py-3 text-bone placeholder-slate-600 focus:outline-none focus:border-gold text-sm transition-colors">
+                    </div>
+                    <div>
+                        <label class="block font-mono text-[10px] uppercase tracking-[0.2em] text-steel mb-2">Email Address</label>
+                        <input type="email" placeholder="john@company.com" required class="w-full bg-ink border border-white/15 rounded-xl px-4 py-3 text-bone placeholder-slate-600 focus:outline-none focus:border-gold text-sm transition-colors">
+                    </div>
+                    <div>
+                        <label class="block font-mono text-[10px] uppercase tracking-[0.2em] text-steel mb-2">Message</label>
+                        <textarea rows="4" placeholder="How can we assist your logistics requirements?" required class="w-full bg-ink border border-white/15 rounded-xl px-4 py-3 text-bone placeholder-slate-600 focus:outline-none focus:border-gold text-sm transition-colors"></textarea>
+                    </div>
+                    <button type="submit" class="btn-gold w-full bg-gold hover:bg-gold-hover text-ink font-bold py-4 rounded-xl transition-all shadow-[0_0_30px_-6px_rgba(212,175,55,.4)] text-sm tracking-wide">
+                        Send Message &rarr;
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+{% endblock %}
