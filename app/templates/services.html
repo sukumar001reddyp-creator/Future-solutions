@@ -1,58 +1,60 @@
 {% extends "base.html" %}
 {% block title %}Our Services | Future Solutions{% endblock %}
 {% block content %}
-<div class="grain bg-ink text-bone font-sans antialiased py-24 lg:py-36 min-h-[85vh]">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
+<div class="bg-[#F0F6FC] text-[#0B192C] py-20 lg:py-32 min-h-[85vh]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Header -->
-        <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
-            <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-gold/80">Capabilities</p>
-            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight">
-                Global Transport & <span class="italic text-gold-light">Logistics Services.</span>
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span class="bg-blue-600/10 border border-blue-500/30 text-blue-700 font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full">
+                Our Capabilities
+            </span>
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0B192C]">
+                Global Transport & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">Logistics Services.</span>
             </h1>
-            <p class="text-steel text-base">
-                End-to-end supply chain execution designed for speed, security, and absolute cost-efficiency across international trade corridors[cite: 7].
+            <p class="text-slate-700 text-base">
+                End-to-end supply chain execution designed for speed, security, and absolute cost-efficiency across international trade corridors.
             </p>
         </div>
 
         <!-- Services Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Ocean Freight -->
-            <a href="{{ url_for('service_detail', service_slug='ocean-freight') }}" class="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-gold/50 transition-all bg-navy/40">
-                <div class="h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=800&q=80" alt="Ocean Freight" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80">
+            <a href="{{ url_for('service_detail', service_slug='ocean-freight') }}" class="group bg-white border border-blue-100 rounded-2xl overflow-hidden hover:border-blue-400 transition-all shadow-md">
+                <div class="h-56 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=800&q=80" alt="Ocean Freight" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 </div>
                 <div class="p-8">
-                    <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-gold/70 mb-3">Sea — FCL / LCL</p>
-                    <h3 class="font-serif text-2xl mb-3 text-bone">Ocean Freight</h3>
-                    <p class="text-steel text-sm mb-6 leading-relaxed">FCL and LCL shipping solutions operating across major global maritime corridors with trusted carrier partnerships[cite: 7].</p>
-                    <span class="text-gold text-xs font-mono uppercase tracking-widest inline-flex items-center gap-2">Learn More &rarr;</span>
+                    <span class="text-blue-600 text-xs font-mono uppercase tracking-widest font-bold block mb-2">Sea — FCL / LCL</span>
+                    <h3 class="text-2xl font-extrabold text-[#0B192C] mb-3">Ocean Freight</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">FCL and LCL shipping solutions operating across major global maritime corridors with trusted carrier partnerships.</p>
+                    <span class="text-blue-600 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">Learn More &rarr;</span>
                 </div>
             </a>
 
             <!-- Air Cargo -->
-            <a href="{{ url_for('service_detail', service_slug='service_slug=air-cargo') }}" class="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-gold/50 transition-all bg-navy/40">
-                <div class="h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Air Cargo Logistics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80">
+            <a href="{{ url_for('service_detail', service_slug='air-cargo') }}" class="group bg-white border border-blue-100 rounded-2xl overflow-hidden hover:border-blue-400 transition-all shadow-md">
+                <div class="h-56 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Air Cargo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 </div>
                 <div class="p-8">
-                    <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-gold/70 mb-3">Air — Express</p>
-                    <h3 class="font-serif text-2xl mb-3 text-bone">Air Cargo Logistics</h3>
-                    <p class="text-steel text-sm mb-6 leading-relaxed">Time-critical express air freight services ensuring rapid and safe global delivery for urgent commercial shipments[cite: 7].</p>
-                    <span class="text-gold text-xs font-mono uppercase tracking-widest inline-flex items-center gap-2">Learn More &rarr;</span>
+                    <span class="text-blue-600 text-xs font-mono uppercase tracking-widest font-bold block mb-2">Air — Express</span>
+                    <h3 class="text-2xl font-extrabold text-[#0B192C] mb-3">Air Cargo Logistics</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">Time-critical express air freight services ensuring rapid and safe global delivery for urgent commercial shipments.</p>
+                    <span class="text-blue-600 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">Learn More &rarr;</span>
                 </div>
             </a>
 
             <!-- Customs Clearance -->
-            <a href="{{ url_for('service_detail', service_slug='customs-clearance') }}" class="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-gold/50 transition-all bg-navy/40">
-                <div class="h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Customs Clearance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80">
+            <a href="{{ url_for('service_detail', service_slug='customs-clearance') }}" class="group bg-white border border-blue-100 rounded-2xl overflow-hidden hover:border-blue-400 transition-all shadow-md">
+                <div class="h-56 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Customs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 </div>
                 <div class="p-8">
-                    <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-gold/70 mb-3">Compliance</p>
-                    <h3 class="font-serif text-2xl mb-3 text-bone">Customs Clearance</h3>
-                    <p class="text-steel text-sm mb-6 leading-relaxed">Expert documentation, tariff consulting, and fast regulatory compliance handling to clear your cargo through international ports[cite: 7].</p>
-                    <span class="text-gold text-xs font-mono uppercase tracking-widest inline-flex items-center gap-2">Learn More &rarr;</span>
+                    <span class="text-blue-600 text-xs font-mono uppercase tracking-widest font-bold block mb-2">Compliance</span>
+                    <h3 class="text-2xl font-extrabold text-[#0B192C] mb-3">Customs Clearance</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">Expert documentation, tariff consulting, and fast regulatory compliance handling to clear your cargo through international ports.</p>
+                    <span class="text-blue-600 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">Learn More &rarr;</span>
                 </div>
             </a>
         </div>
