@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard | Future Solutions{% endblock %}
+{% block content %}
+<div class="min-h-[calc(100vh-65px)] py-12 px-6 lg:px-12 bg-[#EBF8FF] dark:bg-[#0B192C] text-[#0B192C] dark:text-slate-100 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white/90 dark:bg-[#07111E] border border-blue-200/80 dark:border-blue-900 p-6 rounded-2xl shadow-sm">
+            <div>
+                <span class="text-blue-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-widest bg-blue-500/10 dark:bg-blue-950/50 px-3 py-1 rounded-full border border-blue-500/20">Control Center</span>
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-[#0B192C] dark:text-white mt-2">Admin Dashboard</h1>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="{{ url_for('index') }}" class="bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 text-slate-800 dark:text-slate-200 font-semibold px-5 py-2.5 rounded-xl text-xs transition-all">
+                    &larr; Back to Website
+                </a>
+            </div>
+        </div>
+
+        <!-- Add Shipment Tracking Form Section -->
+        <div class="bg-white/90 dark:bg-[#07111E] border border-blue-200/80 dark:border-blue-900 rounded-2xl p-6 shadow-sm space-y-4">
+            <h3 class="text-lg font-extrabold text-[#0B192C] dark:text-white">📦 Add New Shipment Tracking & Details</h3>
+            <form action="{{ url_for('admin_dashboard') }}" method="POST" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">HBL / Tracking No *</label>
+                    <input type="text" name="tracking_number" required placeholder="e.g. FS-98214" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Client Name *</label>
+                    <input type="text" name="client_name" required placeholder="Client Company Name" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Origin Port *</label>
+                    <input type="text" name="origin" required placeholder="e.g. Dubai, UAE" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Destination Port *</label>
+                    <input type="text" name="destination" required placeholder="e.g. Singapore" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Transport Mode</label>
+                    <select name="mode_of_shipment" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                        <option value="Ocean Freight">Ocean Freight</option>
+                        <option value="Air Cargo">Air Cargo</option>
+                        <option value="Road Freight">Road Freight</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Shipping Line / Airline</label>
+                    <input type="text" name="shipping_line" placeholder="e.g. Maersk" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Container / Vessel No</label>
+                    <input type="text" name="container_no" placeholder="Container or Vessel" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Current Status *</label>
+                    <select name="status" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                        <option value="In Transit">In Transit</option>
+                        <option value="Customs Clearance">Customs Clearance</option>
+                        <option value="Out for Delivery">Out for Delivery</option>
+                        <option value="Delivered">Delivered</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">ETD (Departure)</label>
+                    <input type="date" name="etd" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">ETA (Arrival)</label>
+                    <input type="date" name="eta" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Cargo Description</label>
+                    <input type="text" name="cargo_description" placeholder="Brief info about cargo goods" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div class="sm:col-span-2 lg:col-span-4 flex justify-end">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2.5 rounded-xl text-xs shadow-md transition-all">Save & Publish Tracking</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Active Trackings Table -->
+        <div class="bg-white/90 dark:bg-[#07111E] border border-blue-200/80 dark:border-blue-900 rounded-2xl p-6 shadow-sm space-y-4">
+            <h3 class="text-lg font-extrabold text-[#0B192C] dark:text-white">Active Shipments Database</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-slate-700 dark:text-slate-300">
+                    <thead class="bg-blue-50 dark:bg-blue-950/50 uppercase font-bold text-[10px] tracking-wider text-slate-500">
+                        <tr>
+                            <th class="p-3 rounded-l-xl">Tracking / BL No.</th>
+                            <th class="p-3">Client</th>
+                            <th class="p-3">Route</th>
+                            <th class="p-3">Status</th>
+                            <th class="p-3">Updated At</th>
+                            <th class="p-3 rounded-r-xl text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                        {% for item in shipments %}
+                        <tr>
+                            <td class="p-3 font-mono font-bold text-blue-600 dark:text-cyan-400">{{ item.tracking_number }}</td>
+                            <td class="p-3 font-bold">{{ item.client_name }}</td>
+                            <td class="p-3">{{ item.origin }} &rarr; {{ item.destination }}</td>
+                            <td class="p-3"><span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded-full font-bold">{{ item.status }}</span></td>
+                            <td class="p-3 text-slate-400">{{ item.updated_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                            <td class="p-3 text-right">
+                                <a href="{{ url_for('edit_shipment', id=item.id) }}" class="bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 font-bold px-3 py-1.5 rounded-lg text-[11px] transition-all border border-amber-500/20">Edit</a>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="6" class="p-4 text-center text-slate-400">No active tracking shipments added yet.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -4,10 +4,10 @@
 <div class="grain bg-ink text-bone font-sans antialiased py-24 lg:py-36 min-h-[85vh] flex items-center">
     <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 w-full">
         
-        <!-- Back Link -->
-        <div class="mb-10">
-            <a href="{{ url_for('services') }}" class="font-mono text-xs uppercase tracking-[0.25em] text-gold hover:text-gold-hover inline-flex items-center gap-2">&larr; Back to Services</a>
-        </div>
+        <!-- Back Link with Hash Support -->
+<div class="mb-10">
+    <a href="{{ url_for('index') }}#services" class="font-mono text-xs uppercase tracking-[0.25em] text-gold hover:text-gold-hover inline-flex items-center gap-2">&larr; Back to Services</a>
+</div>>
 
         <!-- Side-by-Side Layout Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

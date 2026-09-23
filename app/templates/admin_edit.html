@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}Edit Shipment | Future Solutions{% endblock %}
+{% block content %}
+<div class="min-h-[calc(100vh-65px)] py-12 px-6 lg:px-12 bg-[#EBF8FF] dark:bg-[#0B192C] text-[#0B192C] dark:text-slate-100 transition-colors duration-300">
+    <div class="max-w-4xl mx-auto space-y-6">
+        
+        <div class="flex justify-between items-center bg-white/90 dark:bg-[#07111E] border border-blue-200/80 dark:border-blue-900 p-6 rounded-2xl shadow-sm">
+            <div>
+                <span class="text-blue-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-widest bg-blue-500/10 dark:bg-blue-950/50 px-3 py-1 rounded-full border border-blue-500/20">Management</span>
+                <h1 class="text-2xl font-extrabold text-[#0B192C] dark:text-white mt-2">Edit Shipment: {{ shipment.tracking_number }}</h1>
+            </div>
+            <a href="{{ url_for('admin_dashboard') }}" class="bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 text-slate-800 dark:text-slate-200 font-semibold px-4 py-2 rounded-xl text-xs transition-all">
+                &larr; Back to Dashboard
+            </a>
+        </div>
+
+        <div class="bg-white/90 dark:bg-[#07111E] border border-blue-200/80 dark:border-blue-900 rounded-2xl p-6 sm:p-8 shadow-sm">
+            <form method="POST" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">HBL / Tracking No *</label>
+                    <input type="text" name="tracking_number" value="{{ shipment.tracking_number }}" required class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Client Name *</label>
+                    <input type="text" name="client_name" value="{{ shipment.client_name }}" required class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Origin Port *</label>
+                    <input type="text" name="origin" value="{{ shipment.origin }}" required class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Destination Port *</label>
+                    <input type="text" name="destination" value="{{ shipment.destination }}" required class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Transport Mode</label>
+                    <select name="mode_of_shipment" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                        <option value="Ocean Freight" {% if shipment.mode_of_shipment == 'Ocean Freight' %}selected{% endif %}>Ocean Freight</option>
+                        <option value="Air Cargo" {% if shipment.mode_of_shipment == 'Air Cargo' %}selected{% endif %}>Air Cargo</option>
+                        <option value="Road Freight" {% if shipment.mode_of_shipment == 'Road Freight' %}selected{% endif %}>Road Freight</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Shipping Line / Airline</label>
+                    <input type="text" name="shipping_line" value="{{ shipment.shipping_line or '' }}" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Container / Vessel No</label>
+                    <input type="text" name="container_no" value="{{ shipment.container_no or '' }}" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Vessel / Flight</label>
+                    <input type="text" name="vessel" value="{{ shipment.vessel or '' }}" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Current Status *</label>
+                    <select name="status" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                        <option value="In Transit" {% if shipment.status == 'In Transit' %}selected{% endif %}>In Transit</option>
+                        <option value="Customs Clearance" {% if shipment.status == 'Customs Clearance' %}selected{% endif %}>Customs Clearance</option>
+                        <option value="Out for Delivery" {% if shipment.status == 'Out for Delivery' %}selected{% endif %}>Out for Delivery</option>
+                        <option value="Delivered" {% if shipment.status == 'Delivered' %}selected{% endif %}>Delivered</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">ETD (Departure)</label>
+                    <input type="date" name="etd" value="{{ shipment.etd or '' }}" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">ETA (Arrival)</label>
+                    <input type="date" name="eta" value="{{ shipment.eta or '' }}" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Cargo Description</label>
+                    <input type="text" name="cargo_description" value="{{ shipment.cargo_description or '' }}" class="w-full bg-[#EBF8FF] dark:bg-[#0B192C] border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-[#0B192C] dark:text-white">
+                </div>
+
+                <div class="sm:col-span-2 flex justify-end mt-4">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2.5 rounded-xl text-xs shadow-md transition-all">Update Shipment Details</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
