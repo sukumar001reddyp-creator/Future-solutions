@@ -5,9 +5,9 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 w-full">
         
         <!-- Back Link with Hash Support -->
-<div class="mb-10">
-    <a href="{{ url_for('index') }}#services" class="font-mono text-xs uppercase tracking-[0.25em] text-gold hover:text-gold-hover inline-flex items-center gap-2">&larr; Back to Services</a>
-</div>>
+        <div class="mb-10">
+            <a href="{{ url_for('index') }}#services" class="font-mono text-xs uppercase tracking-[0.25em] text-gold hover:text-gold-hover inline-flex items-center gap-2">&larr; Back to Services</a>
+        </div>
 
         <!-- Side-by-Side Layout Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -16,11 +16,37 @@
             <div class="lg:col-span-6 relative group">
                 <div class="absolute -inset-1 bg-gradient-to-r from-gold to-amber-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
                 <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl h-80 sm:h-[450px] bg-navy">
-                    <img src="{{ service.image }}" alt="{{ service.title }}" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
+                    
+                    {% set title_lower = service.title | lower %}
+                    
+                    {% if 'ocean' in title_lower or 'sea' in title_lower %}
+                        <!-- Desktop Ocean Freight -->
+                        <img src="{{ url_for('static', filename='images/hero1.png') }}" alt="{{ service.title }}" class="hidden sm:block w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
+                        <!-- Mobile Ocean Freight -->
+                        <img src="{{ url_for('static', filename='images/h1.png') }}" alt="{{ service.title }}" class="block sm:hidden w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
+                    
+                    {% elif 'air' in title_lower or 'cargo' in title_lower %}
+                        <!-- Desktop Air Cargo -->
+                        <img src="{{ url_for('static', filename='images/hero2.png') }}" alt="{{ service.title }}" class="hidden sm:block w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
+                        <!-- Mobile Air Cargo -->
+                        <img src="{{ url_for('static', filename='images/h2.png') }}" alt="{{ service.title }}" class="block sm:hidden w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
+                    
+                    {% elif 'customs' in title_lower or 'clearance' in title_lower %}
+                        <!-- Desktop Customs Clearance -->
+                        <img src="{{ url_for('static', filename='images/hero4.png') }}" alt="{{ service.title }}" class="hidden sm:block w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
+                        <!-- Mobile Customs Clearance -->
+                        <img src="{{ url_for('static', filename='images/h4.png') }}" alt="{{ service.title }}" class="block sm:hidden w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
+                    
+                    {% else %}
+                        <!-- Fallback to service.image or default -->
+                        <img src="{{ service.image if service.image else url_for('static', filename='images/hero.png') }}" alt="{{ service.title }}" class="hidden sm:block w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
+                        <img src="{{ url_for('static', filename='images/h.png') }}" alt="{{ service.title }}" class="block sm:hidden w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
+                    {% endif %}
+
                 </div>
             </div>
 
-            <!-- Right Side: Content & CTA -->
+            <!-- Right Side: Content & CTA with Original Luxury Typography -->
             <div class="lg:col-span-6 space-y-6">
                 <span class="inline-flex items-center gap-2 border border-gold/30 bg-gold/5 text-gold font-mono text-[11px] uppercase tracking-[0.3em] px-4 py-1.5 rounded-full">
                     Enterprise Service

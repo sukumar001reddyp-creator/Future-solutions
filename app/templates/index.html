@@ -2,7 +2,7 @@
 {% block title %}Future Solutions | Global Logistics & Supply Chain Excellence{% endblock %}
 {% block content %}
 
-<!-- 1. HERO SLIDESHOW SECTION WITH 5 IMAGES (Full Screen Background behind sidebar) -->
+<!-- 1. HERO SLIDESHOW SECTION WITH RESPONSIVE DESKTOP & MOBILE IMAGES -->
 <section id="home" class="min-h-[calc(100vh-65px)] flex items-center relative overflow-hidden border-b border-blue-200/80 dark:border-blue-900/60 px-6 lg:px-16 py-12 transition-colors duration-300">
   
   <!-- Slides Container - సైడ్‌బార్ కింద నుండి కూడా పూర్తి స్క్రీన్ విడ్త్‌కి ఇమేజ్ రావడానికి నెగటివ్ మార్జిన్ -->
@@ -10,32 +10,47 @@
     
     <!-- Slide 1: Original Hero -->
     <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out">
-      <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Global Logistics Background" class="w-full h-full object-cover object-center opacity-85 dark:opacity-60">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
+      <!-- Desktop Image -->
+      <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Global Logistics Background" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
+      <!-- Mobile Image -->
+      <img src="{{ url_for('static', filename='images/h.png') }}" alt="Global Logistics Mobile" class="block sm:hidden w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
     </div>
 
     <!-- Slide 2: Ocean Freight -->
     <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-      <img src="{{ url_for('static', filename='images/hero1.png') }}" alt="Ocean Freight" class="w-full h-full object-cover object-center opacity-85 dark:opacity-60">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
+      <!-- Desktop Image -->
+      <img src="{{ url_for('static', filename='images/hero1.png') }}" alt="Ocean Freight" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
+      <!-- Mobile Image -->
+      <img src="{{ url_for('static', filename='images/h1.png') }}" alt="Ocean Freight Mobile" class="block sm:hidden w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
     </div>
 
     <!-- Slide 3: Air Cargo -->
     <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-      <img src="{{ url_for('static', filename='images/hero2.png') }}" alt="Air Cargo" class="w-full h-full object-cover object-center opacity-85 dark:opacity-60">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
+      <!-- Desktop Image -->
+      <img src="{{ url_for('static', filename='images/hero2.png') }}" alt="Air Cargo" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
+      <!-- Mobile Image -->
+      <img src="{{ url_for('static', filename='images/h2.png') }}" alt="Air Cargo Mobile" class="block sm:hidden w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
     </div>
 
     <!-- Slide 4: Road Freight -->
     <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-      <img src="{{ url_for('static', filename='images/hero3.png') }}" alt="Road Freight" class="w-full h-full object-cover object-center opacity-85 dark:opacity-60">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
+      <!-- Desktop Image -->
+      <img src="{{ url_for('static', filename='images/hero3.png') }}" alt="Road Freight" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
+      <!-- Mobile Image -->
+      <img src="{{ url_for('static', filename='images/h3.png') }}" alt="Road Freight Mobile" class="block sm:hidden w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
     </div>
 
     <!-- Slide 5: Port Operations -->
     <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-      <img src="{{ url_for('static', filename='images/hero4.png') }}" alt="Port Operations" class="w-full h-full object-cover object-center opacity-85 dark:opacity-60">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
+      <!-- Desktop Image -->
+      <img src="{{ url_for('static', filename='images/hero4.png') }}" alt="Port Operations" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
+      <!-- Mobile Image -->
+      <img src="{{ url_for('static', filename='images/h4.png') }}" alt="Port Operations Mobile" class="block sm:hidden w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
     </div>
 
   </div>
