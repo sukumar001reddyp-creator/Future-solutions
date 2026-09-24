@@ -2,53 +2,43 @@
 {% block title %}Future Solutions | Global Logistics & Supply Chain Excellence{% endblock %}
 {% block content %}
 
-<!-- 1. HERO SLIDESHOW SECTION WITH RESPONSIVE DESKTOP & MOBILE IMAGES -->
-<section id="home" class="min-h-[calc(100vh-65px)] flex items-center relative overflow-hidden border-b border-blue-200/80 dark:border-blue-900/60 px-6 lg:px-16 py-12 transition-colors duration-300">
+<!-- 1. HERO SLIDESHOW SECTION WITH PERFECT RESPONSIVE CONTROLS -->
+<section id="home" class="min-h-[calc(100vh-65px)] flex flex-col justify-between relative overflow-hidden border-b border-blue-200/80 dark:border-blue-900/60 px-6 lg:px-16 py-12 transition-colors duration-300">
   
-  <!-- Slides Container - సైడ్‌బార్ కింద నుండి కూడా పూర్తి స్క్రీన్ విడ్త్‌కి ఇమేజ్ రావడానికి నెగటివ్ మార్జిన్ -->
+  <!-- Slides Container -->
   <div id="hero-slider" class="absolute inset-0 -ml-0 md:-ml-72 z-0 pointer-events-none">
     
-    <!-- Slide 1: Original Hero -->
+    <!-- Slide 1 -->
     <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out">
-      <!-- Desktop Image -->
       <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Global Logistics Background" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
-      <!-- Mobile Image -->
       <img src="{{ url_for('static', filename='images/h.png') }}" alt="Global Logistics Mobile" class="block sm:hidden w-full h-full object-cover object-center">
       <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
     </div>
 
-    <!-- Slide 2: Ocean Freight -->
+    <!-- Slide 2 -->
     <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-      <!-- Desktop Image -->
       <img src="{{ url_for('static', filename='images/hero1.png') }}" alt="Ocean Freight" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
-      <!-- Mobile Image -->
       <img src="{{ url_for('static', filename='images/h1.png') }}" alt="Ocean Freight Mobile" class="block sm:hidden w-full h-full object-cover object-center">
       <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
     </div>
 
-    <!-- Slide 3: Air Cargo -->
+    <!-- Slide 3 -->
     <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-      <!-- Desktop Image -->
       <img src="{{ url_for('static', filename='images/hero2.png') }}" alt="Air Cargo" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
-      <!-- Mobile Image -->
       <img src="{{ url_for('static', filename='images/h2.png') }}" alt="Air Cargo Mobile" class="block sm:hidden w-full h-full object-cover object-center">
       <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
     </div>
 
-    <!-- Slide 4: Road Freight -->
+    <!-- Slide 4 -->
     <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-      <!-- Desktop Image -->
       <img src="{{ url_for('static', filename='images/hero3.png') }}" alt="Road Freight" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
-      <!-- Mobile Image -->
       <img src="{{ url_for('static', filename='images/h3.png') }}" alt="Road Freight Mobile" class="block sm:hidden w-full h-full object-cover object-center">
       <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
     </div>
 
-    <!-- Slide 5: Port Operations -->
+    <!-- Slide 5 -->
     <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-      <!-- Desktop Image -->
       <img src="{{ url_for('static', filename='images/hero4.png') }}" alt="Port Operations" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
-      <!-- Mobile Image -->
       <img src="{{ url_for('static', filename='images/h4.png') }}" alt="Port Operations Mobile" class="block sm:hidden w-full h-full object-cover object-center">
       <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#EBF8FF]/95 via-[#EBF8FF]/60 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent"></div>
     </div>
@@ -118,24 +108,27 @@
       </p>
     </div>
 
-    <!-- Manual Slide Controls -->
-    <div class="flex items-center gap-3 bg-white/60 dark:bg-[#07111E]/60 backdrop-blur-md p-2 rounded-2xl border border-blue-200/60 dark:border-blue-900 w-fit">
-      <button onclick="prevSlide()" class="w-9 h-9 rounded-xl bg-blue-600 text-white font-bold flex items-center justify-center hover:bg-blue-700 transition-all shadow-sm">
-        &larr;
-      </button>
-      <div id="slide-dots" class="flex gap-1.5 px-2">
-        <span onclick="goToSlide(0)" class="w-6 h-2.5 rounded-full bg-blue-600 cursor-pointer transition-all"></span>
-        <span onclick="goToSlide(1)" class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer transition-all"></span>
-        <span onclick="goToSlide(2)" class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer transition-all"></span>
-        <span onclick="goToSlide(3)" class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer transition-all"></span>
-        <span onclick="goToSlide(4)" class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer transition-all"></span>
-      </div>
-      <button onclick="nextSlide()" class="w-9 h-9 rounded-xl bg-blue-600 text-white font-bold flex items-center justify-center hover:bg-blue-700 transition-all shadow-sm">
-        &rarr;
-      </button>
-    </div>
-
   </div>
+
+  <!-- BOTTOM CENTER SLIDE CONTROLS (Compact 3D Glass Box) -->
+  <div class="relative z-20 mt-8 mb-2 mx-auto flex items-center gap-3 glass px-4 py-2 rounded-2xl shadow-xl w-fit">
+    <button onclick="prevSlide()" class="w-8 h-8 rounded-xl bg-blue-600 text-white font-black flex items-center justify-center hover:bg-blue-700 transition-all shadow-md text-xs">
+      &larr;
+    </button>
+    <div id="slide-dots" class="flex items-center gap-1.5 px-1">
+      <span onclick="goToSlide(0)" class="w-5 h-2 rounded-full bg-blue-600 cursor-pointer transition-all"></span>
+      <span onclick="goToSlide(1)" class="w-2 h-2 rounded-full bg-slate-400 dark:bg-slate-700 cursor-pointer transition-all"></span>
+      <span onclick="goToSlide(2)" class="w-2 h-2 rounded-full bg-slate-400 dark:bg-slate-700 cursor-pointer transition-all"></span>
+      <span onclick="goToSlide(3)" class="w-2 h-2 rounded-full bg-slate-400 dark:bg-slate-700 cursor-pointer transition-all"></span>
+      <span onclick="goToSlide(4)" class="w-2 h-2 rounded-full bg-slate-400 dark:bg-slate-700 cursor-pointer transition-all"></span>
+    </div>
+    <button onclick="nextSlide()" class="w-8 h-8 rounded-xl bg-blue-600 text-white font-black flex items-center justify-center hover:bg-blue-700 transition-all shadow-md text-xs">
+      &rarr;
+    </button>
+  </div>
+
+</section>
+
 </section>
 
 <!-- ============ METRICS & STATS GRID ============ -->
@@ -166,7 +159,7 @@
         <div class="flex items-center justify-between">
           <div>
             <span class="text-blue-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">Experience</span>
-            <div class="text-xl font-extrabold text-[#0B192C] dark:text-white mt-0.5">25+ Years</div>
+            <div class="text-xl font-extrabold text-[#0B192C] dark:text-white mt-0.5">6+ Years</div>
           </div>
           <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/50 border border-blue-200 flex items-center justify-center text-blue-600 text-xs">⭐</div>
         </div>
@@ -529,8 +522,8 @@ async function handleTracking(event) {
         });
         dots.forEach((dot, i) => {
             dot.className = i === index 
-                ? 'w-6 h-2.5 rounded-full bg-blue-600 cursor-pointer transition-all' 
-                : 'w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer transition-all';
+                ? 'w-6 h-2 rounded-full bg-blue-600 cursor-pointer transition-all' 
+                : 'w-2.5 h-2.5 rounded-full bg-slate-400 dark:bg-slate-700 cursor-pointer transition-all';
         });
         currentSlide = index;
     }
