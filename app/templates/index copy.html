@@ -1,0 +1,555 @@
+{% extends "base.html" %}
+{% block title %}Future Solutions | Global Logistics & Supply Chain Excellence{% endblock %}
+{% block content %}
+
+<!-- 1. HERO SLIDESHOW SECTION -->
+<section id="home" class="min-h-[calc(100vh-65px)] flex flex-col justify-between relative overflow-hidden border-b border-emerald-500/20 dark:border-emerald-500/20 px-6 lg:px-16 py-12 transition-colors duration-300">
+  
+  <!-- Slides Container -->
+  <div id="hero-slider" class="absolute inset-0 -ml-0 md:-ml-72 z-0 pointer-events-none">
+    
+    <!-- Slide 1 -->
+    <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out">
+      <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Global Logistics Background" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
+      <img src="{{ url_for('static', filename='images/h.png') }}" alt="Global Logistics Mobile" class="block sm:hidden w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#F3F8F6]/95 via-[#F3F8F6]/60 dark:from-[#030B08]/95 dark:via-[#030B08]/80 to-transparent"></div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+      <img src="{{ url_for('static', filename='images/hero1.png') }}" alt="Ocean Freight" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
+      <img src="{{ url_for('static', filename='images/h1.png') }}" alt="Ocean Freight Mobile" class="block sm:hidden w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#F3F8F6]/95 via-[#F3F8F6]/60 dark:from-[#030B08]/95 dark:via-[#030B08]/80 to-transparent"></div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+      <img src="{{ url_for('static', filename='images/hero2.png') }}" alt="Air Cargo" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
+      <img src="{{ url_for('static', filename='images/h2.png') }}" alt="Air Cargo Mobile" class="block sm:hidden w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#F3F8F6]/95 via-[#F3F8F6]/60 dark:from-[#030B08]/95 dark:via-[#030B08]/80 to-transparent"></div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+      <img src="{{ url_for('static', filename='images/hero3.png') }}" alt="Road Freight" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
+      <img src="{{ url_for('static', filename='images/h3.png') }}" alt="Road Freight Mobile" class="block sm:hidden w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#F3F8F6]/95 via-[#F3F8F6]/60 dark:from-[#030B08]/95 dark:via-[#030B08]/80 to-transparent"></div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+      <img src="{{ url_for('static', filename='images/hero4.png') }}" alt="Port Operations" class="hidden sm:block w-full h-full object-cover object-center opacity-85 dark:opacity-60">
+      <img src="{{ url_for('static', filename='images/h4.png') }}" alt="Port Operations Mobile" class="block sm:hidden w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#F3F8F6]/95 via-[#F3F8F6]/60 dark:from-[#030B08]/95 dark:via-[#030B08]/80 to-transparent"></div>
+    </div>
+
+  </div>
+
+  <!-- Dynamic Content for Each Slide -->
+  <div class="relative z-10 max-w-3xl space-y-6 my-auto w-full md:pl-8">
+    
+    <div id="slide-content-0" class="slide-content space-y-6">
+      <span class="inline-flex items-center gap-2 bg-emerald-600/10 dark:bg-emerald-400/10 border border-emerald-500/30 px-4 py-1.5 rounded-full text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-widest">
+        <span class="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse"></span> GLOBAL FREIGHT FOR A BRIGHTER TOMORROW
+      </span>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#061A12] dark:text-white tracking-tight leading-[1.08]">
+        Moving Global Trade <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-400">Without Limits.</span>
+      </h1>
+      <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg font-medium max-w-2xl">
+        Ocean Freight, Air Cargo, Customs Clearance, Project Logistics, Warehousing and Door-to-Door Solutions — built for businesses that move the world.
+      </p>
+    </div>
+
+    <div id="slide-content-1" class="slide-content space-y-6 hidden">
+      <span class="inline-flex items-center gap-2 bg-emerald-600/10 dark:bg-emerald-400/10 border border-emerald-500/30 px-4 py-1.5 rounded-full text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-widest">
+        <span class="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse"></span> GLOBAL MARITIME EXCELLENCE
+      </span>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#061A12] dark:text-white tracking-tight leading-[1.08]">
+        Advanced Ocean <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-400">Freight Corridors.</span>
+      </h1>
+      <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg font-medium max-w-2xl">
+        FCL and LCL container shipping solutions operating across major global maritime routes with trusted carrier partnerships.
+      </p>
+    </div>
+
+    <div id="slide-content-2" class="slide-content space-y-6 hidden">
+      <span class="inline-flex items-center gap-2 bg-emerald-600/10 dark:bg-emerald-400/10 border border-emerald-500/30 px-4 py-1.5 rounded-full text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-widest">
+        <span class="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse"></span> TIME-CRITICAL AIR FREIGHT
+      </span>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#061A12] dark:text-white tracking-tight leading-[1.08]">
+        Fast Express <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-400">Air Cargo.</span>
+      </h1>
+      <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg font-medium max-w-2xl">
+        Rapid worldwide delivery services ensuring urgent commercial shipments arrive securely and on schedule.
+      </p>
+    </div>
+
+    <div id="slide-content-3" class="slide-content space-y-6 hidden">
+      <span class="inline-flex items-center gap-2 bg-emerald-600/10 dark:bg-emerald-400/10 border border-emerald-500/30 px-4 py-1.5 rounded-full text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-widest">
+        <span class="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse"></span> MULTI-MODAL HIGHWAY TRANSPORT
+      </span>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#061A12] dark:text-white tracking-tight leading-[1.08]">
+        Reliable Road <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-400">Freight Logistics.</span>
+      </h1>
+      <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg font-medium max-w-2xl">
+        Comprehensive trucking and overland transport networks connecting ports directly to your warehouses.
+      </p>
+    </div>
+
+    <div id="slide-content-4" class="slide-content space-y-6 hidden">
+      <span class="inline-flex items-center gap-2 bg-emerald-600/10 dark:bg-emerald-400/10 border border-emerald-500/30 px-4 py-1.5 rounded-full text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-widest">
+        <span class="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse"></span> PORT CUSTOMS & CONTROL
+      </span>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#061A12] dark:text-white tracking-tight leading-[1.08]">
+        Seamless Port <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-400">Customs Clearance.</span>
+      </h1>
+      <p class="text-slate-700 dark:text-slate-300 text-base sm:text-lg font-medium max-w-2xl">
+        Expert regulatory documentation and inspection services ensuring fast, hassle-free clearance at international docks.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM CENTER SLIDE CONTROLS -->
+  <div class="relative z-20 mt-8 mb-2 mx-auto flex items-center gap-3 glass px-4 py-2 rounded-2xl shadow-xl w-fit">
+    <button onclick="prevSlide()" class="w-8 h-8 rounded-xl bg-emerald-600 text-white font-black flex items-center justify-center hover:bg-emerald-700 transition-all shadow-md text-xs">
+      &larr;
+    </button>
+    <div id="slide-dots" class="flex items-center gap-1.5 px-1">
+      <span onclick="goToSlide(0)" class="w-6 h-2 rounded-full bg-emerald-600 cursor-pointer transition-all"></span>
+      <span onclick="goToSlide(1)" class="w-2.5 h-2.5 rounded-full bg-slate-400 dark:bg-slate-700 cursor-pointer transition-all"></span>
+      <span onclick="goToSlide(2)" class="w-2.5 h-2.5 rounded-full bg-slate-400 dark:bg-slate-700 cursor-pointer transition-all"></span>
+      <span onclick="goToSlide(3)" class="w-2.5 h-2.5 rounded-full bg-slate-400 dark:bg-slate-700 cursor-pointer transition-all"></span>
+      <span onclick="goToSlide(4)" class="w-2.5 h-2.5 rounded-full bg-slate-400 dark:bg-slate-700 cursor-pointer transition-all"></span>
+    </div>
+    <button onclick="nextSlide()" class="w-8 h-8 rounded-xl bg-emerald-600 text-white font-black flex items-center justify-center hover:bg-emerald-700 transition-all shadow-md text-xs">
+      &rarr;
+    </button>
+  </div>
+
+</section>
+
+<!-- ============ METRICS & STATS GRID ============ -->
+<section class="py-10 bg-white/70 dark:bg-[#030B08] border-b border-emerald-500/20 transition-colors duration-300 px-6 lg:px-16">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      <div class="p-5 bg-[#F3F8F6] dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl shadow-sm">
+        <div class="text-emerald-600 dark:text-emerald-400 text-xl mb-2">🚢</div>
+        <div class="text-2xl font-extrabold text-[#061A12] dark:text-white mb-1">140+</div>
+        <div class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider font-bold">Ports Connected</div>
+      </div>
+      <div class="p-5 bg-[#F3F8F6] dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl shadow-sm">
+        <div class="text-emerald-600 dark:text-emerald-400 text-xl mb-2">📦</div>
+        <div class="text-2xl font-extrabold text-[#061A12] dark:text-white mb-1">12K+</div>
+        <div class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider font-bold">TEU Moved / Year</div>
+      </div>
+      <div class="p-5 bg-[#F3F8F6] dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl shadow-sm">
+        <div class="text-emerald-600 dark:text-emerald-400 text-xl mb-2">🛡️</div>
+        <div class="text-2xl font-extrabold text-[#061A12] dark:text-white mb-1">99.4%</div>
+        <div class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider font-bold">On-Time Delivery</div>
+      </div>
+      <div class="p-5 bg-[#F3F8F6] dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl shadow-sm">
+        <div class="text-emerald-600 dark:text-emerald-400 text-xl mb-2">🎧</div>
+        <div class="text-2xl font-extrabold text-[#061A12] dark:text-white mb-1">24/7</div>
+        <div class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider font-bold">Support Team</div>
+      </div>
+      <div class="p-5 bg-[#F3F8F6] dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl shadow-sm flex flex-col justify-between">
+        <div class="flex items-center justify-between">
+          <div>
+            <span class="text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider">Experience</span>
+            <div class="text-xl font-extrabold text-[#061A12] dark:text-white mt-0.5">6+ Years</div>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-950 border border-emerald-300 flex items-center justify-center text-emerald-600 text-xs">⭐</div>
+        </div>
+        <div class="text-[10px] text-slate-600 dark:text-slate-400 mt-1 font-bold">Global Trust</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. SERVICES SECTION -->
+<section id="services" class="min-h-[calc(100vh-65px)] py-16 px-6 lg:px-16 border-b border-emerald-500/20 flex flex-col justify-center transition-colors duration-300">
+    <div class="max-w-7xl mx-auto w-full my-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <span class="bg-emerald-600/10 dark:bg-emerald-400/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full">
+                Our Capabilities
+            </span>
+            <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#061A12] dark:text-white">
+                Global Transport & <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-400">Logistics Services.</span>
+            </h2>
+            <p class="text-slate-700 dark:text-slate-300 text-sm">
+                End-to-end supply chain execution designed for speed, security, and absolute cost-efficiency across international trade corridors.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="{{ url_for('service_detail', service_slug='ocean-freight') }}" class="group bg-white/90 dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl overflow-hidden shadow-md flex flex-col justify-between hover:border-emerald-500 transition-all">
+                <div class="h-40 overflow-hidden">
+                    <img src="{{ url_for('static', filename='images/hero1.png') }}" alt="Ocean Freight" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <span class="text-emerald-600 dark:text-emerald-400 text-xs font-mono uppercase tracking-widest font-bold block mb-1">Sea — FCL / LCL</span>
+                    <h3 class="text-xl font-extrabold text-[#061A12] dark:text-white mb-2">Ocean Freight</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">FCL and LCL shipping solutions operating across major global maritime corridors with trusted carrier partnerships.</p>
+                </div>
+                <div class="p-6 pt-0">
+                    <span class="text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">Explore Details &rarr;</span>
+                </div>
+            </a>
+
+            <a href="{{ url_for('service_detail', service_slug='air-cargo') }}" class="group bg-white/90 dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl overflow-hidden shadow-md flex flex-col justify-between hover:border-emerald-500 transition-all">
+                <div class="h-40 overflow-hidden">
+                    <img src="{{ url_for('static', filename='images/hero2.png') }}" alt="Air Cargo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <span class="text-emerald-600 dark:text-emerald-400 text-xs font-mono uppercase tracking-widest font-bold block mb-1">Air — Express</span>
+                    <h3 class="text-xl font-extrabold text-[#061A12] dark:text-white mb-2">Air Cargo Logistics</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">Time-critical express air freight services ensuring rapid and safe global delivery for urgent commercial shipments.</p>
+                </div>
+                <div class="p-6 pt-0">
+                    <span class="text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">Explore Details &rarr;</span>
+                </div>
+            </a>
+
+            <a href="{{ url_for('service_detail', service_slug='customs-clearance') }}" class="group bg-white/90 dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl overflow-hidden shadow-md flex flex-col justify-between hover:border-emerald-500 transition-all">
+                <div class="h-40 overflow-hidden">
+                    <img src="{{ url_for('static', filename='images/hero4.png') }}" alt="Customs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <span class="text-emerald-600 dark:text-emerald-400 text-xs font-mono uppercase tracking-widest font-bold block mb-1">Compliance</span>
+                    <h3 class="text-xl font-extrabold text-[#061A12] dark:text-white mb-2">Customs Clearance</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">Expert documentation, tariff consulting, and fast regulatory compliance handling to clear your cargo through international ports.</p>
+                </div>
+                <div class="p-6 pt-0">
+                    <span class="text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">Explore Details &rarr;</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 3. TRACKING SECTION -->
+<section id="tracking" class="min-h-[calc(100vh-65px)] py-16 px-6 lg:px-16 border-b border-emerald-500/20 flex flex-col justify-center bg-white/40 dark:bg-[#030B08]/40 transition-colors duration-300">
+    <div class="max-w-4xl mx-auto w-full space-y-8 my-auto">
+        <div class="text-center space-y-3">
+            <span class="text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-500/10 px-3.5 py-1 rounded-full border border-emerald-500/20">Live Tracking Centre</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#061A12] dark:text-white">Know where your shipment is.</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm">Search a shipment reference or HBL/BL number to view its live operational status.</p>
+        </div>
+        
+        <form id="tracking-form" onsubmit="handleTracking(event)" class="bg-white dark:bg-[#061A12] border border-emerald-500/20 p-4 rounded-2xl shadow-xl flex flex-col sm:flex-row gap-3">
+            <input type="text" id="tracking_input" required placeholder="Shipment reference or HBL number" class="w-full bg-[#F3F8F6] dark:bg-[#030B08] border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-[#061A12] dark:text-white focus:outline-none">
+            <button type="submit" class="bg-gradient-to-r from-emerald-600 to-emerald-400 hover:from-emerald-700 hover:to-emerald-500 text-white font-bold px-8 py-3 rounded-xl text-sm transition-all shadow-md whitespace-nowrap">Track now &rarr;</button>
+        </form>
+
+        <div id="tracking-result-container" class="mt-8"></div>
+    </div>
+</section>
+
+<script>
+async function handleTracking(event) {
+    event.preventDefault();
+    const trackingNum = document.getElementById('tracking_input').value.trim();
+    const container = document.getElementById('tracking-result-container');
+    
+    if (!trackingNum) return;
+
+    container.innerHTML = `<div class="text-center py-6 text-sm text-emerald-600 font-bold">Searching shipment records...</div>`;
+
+    try {
+        const response = await fetch('/track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'tracking_number=' + encodeURIComponent(trackingNum)
+        });
+        const data = await response.json();
+
+        if (data.success) {
+            container.innerHTML = `
+                <div class="bg-white dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl p-6 sm:p-8 shadow-xl space-y-6 text-left">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+                        <div>
+                            <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Shipment Reference / HBL</span>
+                            <h3 class="text-2xl font-extrabold text-[#061A12] dark:text-white mt-1">${data.tracking_number}</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">Client: <strong>${data.client_name}</strong></p>
+                        </div>
+                        <span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-emerald-500/20">
+                            ● ${data.status}
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-4 rounded-xl bg-[#F3F8F6] dark:bg-[#030B08] border border-emerald-500/10">
+                            <small class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Origin Port</small>
+                            <strong class="text-sm text-[#061A12] dark:text-white">${data.origin}</strong>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#F3F8F6] dark:bg-[#030B08] border border-emerald-500/10">
+                            <small class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Destination Port</small>
+                            <strong class="text-sm text-[#061A12] dark:text-white">${data.destination}</strong>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+                        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">Mode</span>
+                            <strong class="text-[#061A12] dark:text-white mt-0.5 block">${data.mode_of_shipment}</strong>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">Shipping Line</span>
+                            <strong class="text-[#061A12] dark:text-white mt-0.5 block">${data.shipping_line}</strong>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">Container No</span>
+                            <strong class="text-[#061A12] dark:text-white mt-0.5 block">${data.container_no}</strong>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">Vessel / Flight</span>
+                            <strong class="text-[#061A12] dark:text-white mt-0.5 block">${data.vessel}</strong>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">ETD</span>
+                            <strong class="text-[#061A12] dark:text-white mt-0.5 block">${data.etd}</strong>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">ETA</span>
+                            <strong class="text-[#061A12] dark:text-white mt-0.5 block">${data.eta}</strong>
+                        </div>
+                        <div class="col-span-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">Cargo Description</span>
+                            <strong class="text-[#061A12] dark:text-white mt-0.5 block truncate">${data.cargo_description}</strong>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            container.innerHTML = `
+                <div class="bg-white dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl p-8 text-center space-y-2 shadow-xl">
+                    <div class="text-3xl">🔍</div>
+                    <h3 class="text-lg font-bold text-[#061A12] dark:text-white">No shipment found</h3>
+                    <p class="text-xs text-slate-500">${data.message}</p>
+                </div>
+            `;
+        }
+    } catch (error) {
+        container.innerHTML = `<div class="text-center py-6 text-xs text-red-500">An error occurred while tracking. Please try again.</div>`;
+    }
+}
+</script>
+
+<!-- 4. GET A QUOTE SECTION -->
+<section id="quote" class="min-h-[calc(100vh-65px)] py-16 px-6 lg:px-16 border-b border-emerald-500/20 flex flex-col justify-center transition-colors duration-300">
+    <div class="max-w-3xl mx-auto w-full my-auto">
+        <div class="text-center mb-8 space-y-2">
+            <span class="text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-500/10 px-3.5 py-1 rounded-full border border-emerald-500/20">Instant Quotation</span>
+            <h2 class="text-3xl font-extrabold text-[#061A12] dark:text-white">Request a Freight Quote</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm">Fill out your cargo details below and our logistics experts will respond within 2 hours.</p>
+        </div>
+        <div class="bg-white/90 dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl p-6 sm:p-8 shadow-xl">
+            <form action="{{ url_for('quote') }}" method="POST" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Full Name</label>
+                        <input type="text" name="full_name" required placeholder="John Doe" class="w-full bg-[#F3F8F6] dark:bg-[#030B08] border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-[#061A12] dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Business Email</label>
+                        <input type="email" name="email" required placeholder="john@company.com" class="w-full bg-[#F3F8F6] dark:bg-[#030B08] border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-[#061A12] dark:text-white">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Service Type</label>
+                        <select name="service_type" class="w-full bg-[#F3F8F6] dark:bg-[#030B08] border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-[#061A12] dark:text-white">
+                            <option>Ocean Freight (FCL / LCL)</option>
+                            <option>Air Cargo Logistics</option>
+                            <option>Customs Clearance</option>
+                            <option>Warehousing & Storage</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Incoterms</label>
+                        <select name="incoterms" class="w-full bg-[#F3F8F6] dark:bg-[#030B08] border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-[#061A12] dark:text-white">
+                            <option>FOB (Free on Board)</option>
+                            <option>CIF (Cost, Insurance & Freight)</option>
+                            <option>EXW (Ex Works)</option>
+                            <option>DDP (Delivered Duty Paid)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Pickup Location / Port</label>
+                        <input type="text" name="pickup" required placeholder="e.g. Dubai, UAE" class="w-full bg-[#F3F8F6] dark:bg-[#030B08] border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-[#061A12] dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Destination Port</label>
+                        <input type="text" name="destination" required placeholder="e.g. Singapore" class="w-full bg-[#F3F8F6] dark:bg-[#030B08] border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-[#061A12] dark:text-white">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Cargo Description</label>
+                    <textarea name="description" rows="2" placeholder="Provide details about cargo type and weight..." class="w-full bg-[#F3F8F6] dark:bg-[#030B08] border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2 text-sm text-[#061A12] dark:text-white"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-emerald-400 hover:from-emerald-700 hover:to-emerald-500 text-white font-bold py-3 rounded-xl shadow-lg shadow-emerald-500/20 text-sm">
+                    Submit Quotation Request &rarr;
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- 5. ABOUT US SECTION -->
+<section id="about" class="min-h-[calc(100vh-65px)] py-16 px-6 lg:px-16 border-b border-emerald-500/20 flex flex-col justify-center bg-white/40 dark:bg-[#030B08]/40 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto w-full my-auto space-y-8">
+        <div class="max-w-3xl space-y-3">
+            <span class="bg-emerald-600/10 dark:bg-emerald-400/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full">
+                About Our Enterprise
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#061A12] dark:text-white tracking-tight leading-tight">
+                Engineered for Global Trade & <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-400">Logistics Excellence.</span>
+            </h2>
+            <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                Future Solutions is a premier global freight forwarding and supply chain enterprise, connecting businesses across the Middle East, Asia, and international maritime corridors with speed, safety, and transparency.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white/90 dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl p-6 shadow-md">
+                <span class="text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold block mb-2">01</span>
+                <h3 class="text-xl font-extrabold text-[#061A12] dark:text-white mb-2">Our Mission</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+                    To simplify international trade by providing seamless, secure, and cost-effective logistics solutions backed by cutting-edge technology and dedicated industry experts.
+                </p>
+            </div>
+
+            <div class="bg-white/90 dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl p-6 shadow-md">
+                <span class="text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold block mb-2">02</span>
+                <h3 class="text-xl font-extrabold text-[#061A12] dark:text-white mb-2">Our Vision</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+                    To become the most trusted global logistics partner known for operational excellence, unwavering reliability, and world-class customer service standards.
+                </p>
+            </div>
+
+            <div class="bg-white/90 dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl p-6 shadow-md">
+                <span class="text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold block mb-2">03</span>
+                <h3 class="text-xl font-extrabold text-[#061A12] dark:text-white mb-2">Global Network</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+                    Operating across key strategic hubs including Dubai, Singapore, and Shanghai, ensuring fast port clearances and robust multi-modal transport execution.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. CONTACT US SECTION -->
+<section id="contact" class="min-h-[calc(100vh-65px)] py-16 px-6 lg:px-16 flex flex-col justify-center transition-colors duration-300">
+    <div class="max-w-7xl mx-auto w-full my-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-6 space-y-4">
+                <span class="bg-emerald-600/10 dark:bg-emerald-400/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full">
+                    Get in Touch
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#061A12] dark:text-white tracking-tight leading-tight">
+                    Let's Discuss Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-400">Supply Chain Needs.</span>
+                </h2>
+                <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                    Have questions about container shipping, air cargo rates, or customs compliance? Reach out to our global logistics team today.
+                </p>
+
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-center gap-3 bg-white/90 dark:bg-[#061A12] border border-emerald-500/20 p-4 rounded-xl shadow-sm">
+                        <span class="text-emerald-600 dark:text-emerald-400 text-lg">📍</span>
+                        <div>
+                            <strong class="block text-[#061A12] dark:text-white text-xs">Global Headquarters</strong>
+                            <span class="text-[11px] text-slate-600 dark:text-slate-400">Jebel Ali Free Zone, Dubai, UAE</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/90 dark:bg-[#061A12] border border-emerald-500/20 p-4 rounded-xl shadow-sm">
+                        <span class="text-emerald-600 dark:text-emerald-400 text-lg">📧</span>
+                        <div>
+                            <strong class="block text-[#061A12] dark:text-white text-xs">Email Support</strong>
+                            <span class="text-[11px] text-slate-600 dark:text-slate-400">ops@futuresolutions-logistics.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 bg-white/90 dark:bg-[#061A12] border border-emerald-500/20 rounded-2xl p-6 sm:p-8 shadow-xl">
+                <h3 class="text-xl font-extrabold text-[#061A12] dark:text-white mb-4">Send Us a Message</h3>
+                <form action="#" method="POST" class="space-y-3">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Your Name</label>
+                        <input type="text" placeholder="John Smith" required class="w-full bg-[#F3F8F6] dark:bg-[#030B08] border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-[#061A12] dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
+                        <input type="email" placeholder="john@company.com" required class="w-full bg-[#F3F8F6] dark:bg-[#030B08] border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-[#061A12] dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Message</label>
+                        <textarea rows="2" placeholder="How can we assist your logistics requirements?" required class="w-full bg-[#F3F8F6] dark:bg-[#030B08] border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2 text-xs text-[#061A12] dark:text-white"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-emerald-400 hover:from-emerald-700 hover:to-emerald-500 text-white font-bold py-3 rounded-xl shadow-lg shadow-emerald-500/20 text-xs">
+                        Send Message &rarr;
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for Slideshow -->
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const contents = document.querySelectorAll('.slide-content');
+    const dots = document.querySelectorAll('#slide-dots span');
+    let slideInterval;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.opacity = i === index ? '1' : '0';
+        });
+        contents.forEach((content, i) => {
+            content.classList.toggle('hidden', i !== index);
+        });
+        dots.forEach((dot, i) => {
+            dot.className = i === index 
+                ? 'w-6 h-2 rounded-full bg-emerald-600 cursor-pointer transition-all' 
+                : 'w-2.5 h-2.5 rounded-full bg-slate-400 dark:bg-slate-700 cursor-pointer transition-all';
+        });
+        currentSlide = index;
+    }
+
+    function nextSlide() {
+        let next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+    }
+
+    function prevSlide() {
+        let prev = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prev);
+    }
+
+    function goToSlide(index) {
+        showSlide(index);
+        resetTimer();
+    }
+
+    function startTimer() {
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetTimer() {
+        clearInterval(slideInterval);
+        startTimer();
+    }
+
+    startTimer();
+</script>
+
+{% endblock %}

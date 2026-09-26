@@ -31,6 +31,12 @@
                         <!-- Mobile Air Cargo -->
                         <img src="{{ url_for('static', filename='images/h2.png') }}" alt="{{ service.title }}" class="block sm:hidden w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
                     
+                    {% elif 'road' in title_lower or 'transport' in title_lower or 'trucking' in title_lower %}
+                        <!-- Desktop Road Transport -->
+                        <img src="{{ url_for('static', filename='images/hero3.png') }}" alt="{{ service.title }}" class="hidden sm:block w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
+                        <!-- Mobile Road Transport -->
+                        <img src="{{ url_for('static', filename='images/h3.png') }}" alt="{{ service.title }}" class="block sm:hidden w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">
+
                     {% elif 'customs' in title_lower or 'clearance' in title_lower %}
                         <!-- Desktop Customs Clearance -->
                         <img src="{{ url_for('static', filename='images/hero4.png') }}" alt="{{ service.title }}" class="hidden sm:block w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 opacity-90">

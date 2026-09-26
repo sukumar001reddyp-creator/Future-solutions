@@ -12,11 +12,11 @@
             theme: {
                 extend: {
                     colors: {
-                        skyLight: '#F3F8F6',
-                        darkBg: '#030B08',
-                        gold: '#10B981',
-                        goldLight: '#34D399',
-                        navyDeep: '#061A12',
+                        skyLight: '#F7F5FA',
+                        darkBg: '#090510',
+                        gold: '#A855F7',
+                        goldLight: '#C084FC',
+                        navyDeep: '#130B24',
                     },
                     fontFamily: {
                         display: ['Outfit', 'sans-serif'],
@@ -29,18 +29,18 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-image:
-                radial-gradient(circle at 15% 0%, rgba(16,185,129,0.10), transparent 45%),
-                radial-gradient(circle at 85% 90%, rgba(52,211,153,0.06), transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(6,26,18,0.02), transparent 60%);
+                radial-gradient(circle at 15% 0%, rgba(168,85,247,0.10), transparent 45%),
+                radial-gradient(circle at 85% 90%, rgba(192,132,252,0.06), transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(19,11,36,0.02), transparent 60%);
             background-attachment: fixed;
         }
         .font-display { font-family: 'Outfit', sans-serif; }
         ::-webkit-scrollbar { width: 9px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #10B981, #047857);
+            background: linear-gradient(180deg, #A855F7, #7E22CE);
             border-radius: 6px;
-            border: 2px solid #030B08;
+            border: 2px solid #090510;
         }
         #sidebar { transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
         
@@ -48,26 +48,26 @@
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.08));
             backdrop-filter: blur(35px) saturate(220%);
             -webkit-backdrop-filter: blur(35px) saturate(220%);
-            border: 1px solid rgba(16, 185, 129, 0.22);
-            box-shadow: 0 20px 50px -12px rgba(3, 11, 8, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.22);
+            box-shadow: 0 20px 50px -12px rgba(9, 5, 16, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
         }
         .dark .glass {
-            background: linear-gradient(135deg, rgba(10, 31, 22, 0.75), rgba(3, 11, 8, 0.85));
-            border: 1px solid rgba(16, 185, 129, 0.18);
-            box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(52, 211, 153, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.6);
+            background: linear-gradient(135deg, rgba(26, 15, 48, 0.75), rgba(9, 5, 16, 0.85));
+            border: 1px solid rgba(168, 85, 247, 0.18);
+            box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(192, 132, 252, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.6);
         }
 
         .btn-3d {
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 24px -4px rgba(16, 185, 129, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 24px -4px rgba(168, 85, 247, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
         }
         .btn-3d:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 30px -4px rgba(16, 185, 129, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 12px 30px -4px rgba(168, 85, 247, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -2px 4px rgba(0, 0, 0, 0.25);
         }
         .btn-3d:active {
             transform: translateY(1px);
-            box-shadow: 0 3px 12px -2px rgba(16, 185, 129, 0.4), inset 0 1px 2px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 3px 12px -2px rgba(168, 85, 247, 0.4), inset 0 1px 2px rgba(0, 0, 0, 0.4);
         }
 
         .nav-link {
@@ -85,22 +85,22 @@
         }
         .dark .nav-link { color: #94A3B8; }
         .nav-link:hover {
-            background: rgba(16, 185, 129, 0.1);
-            color: #047857;
-            box-shadow: inset 0 1px 0 rgba(16, 185, 129, 0.2);
+            background: rgba(168, 85, 247, 0.1);
+            color: #7E22CE;
+            box-shadow: inset 0 1px 0 rgba(168, 85, 247, 0.2);
         }
-        .dark .nav-link:hover { color: #34D399; }
+        .dark .nav-link:hover { color: #C084FC; }
         
         .nav-link.active {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 26, 18, 0.15));
-            color: #047857;
-            border-left: 3px solid #10B981;
-            box-shadow: 0 8px 24px -4px rgba(16, 185, 129, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(19, 11, 36, 0.15));
+            color: #7E22CE;
+            border-left: 3px solid #A855F7;
+            box-shadow: 0 8px 24px -4px rgba(168, 85, 247, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
         }
         .dark .nav-link.active {
-            color: #34D399;
-            border-left: 3px solid #10B981;
-            box-shadow: 0 8px 24px -4px rgba(16, 185, 129, 0.25), inset 0 1px 0 rgba(52, 211, 153, 0.2);
+            color: #C084FC;
+            border-left: 3px solid #A855F7;
+            box-shadow: 0 8px 24px -4px rgba(168, 85, 247, 0.25), inset 0 1px 0 rgba(192, 132, 252, 0.2);
         }
         .nav-link svg {
             width: 20px;
@@ -120,10 +120,10 @@
         }
 
         .brand-mark {
-            background: conic-gradient(from 180deg at 50% 50%, #047857, #10B981, #34D399, #047857);
-            box-shadow: 0 0 0 3px rgba(255,255,255,0.8), 0 12px 30px -6px rgba(16,185,129,0.6), inset 0 2px 6px rgba(255,255,255,0.6);
+            background: conic-gradient(from 180deg at 50% 50%, #7E22CE, #A855F7, #C084FC, #7E22CE);
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.8), 0 12px 30px -6px rgba(168,85,247,0.6), inset 0 2px 6px rgba(255,255,255,0.6);
         }
-        .dark .brand-mark { box-shadow: 0 0 0 3px rgba(3,11,8,0.95), 0 12px 30px -6px rgba(16,185,129,0.45), inset 0 2px 6px rgba(255,255,255,0.3); }
+        .dark .brand-mark { box-shadow: 0 0 0 3px rgba(9,5,16,0.95), 0 12px 30px -6px rgba(168,85,247,0.45), inset 0 2px 6px rgba(255,255,255,0.3); }
         
         .cta-shimmer { position: relative; overflow: hidden; }
         .cta-shimmer::after {
@@ -137,46 +137,51 @@
         
         .social-icon { transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease; }
         .social-icon:hover { transform: translateY(-2px) scale(1.08); }
-
-        @keyframes loading {
-            0% { transform: translateX(-100%); }
-            50% { transform: translateX(0%); }
-            100% { transform: translateX(100%); }
-        }
     </style>
 </head>
-<body class="bg-skyLight dark:bg-darkBg text-[#061A12] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300 selection:bg-gold selection:text-white relative overflow-x-hidden">
+<body class="bg-skyLight dark:bg-darkBg text-[#130B24] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300 selection:bg-purple-500 selection:text-white relative overflow-x-hidden">
 
-    <!-- Cinematic Hollywood-Style Preloader -->
-    <div id="preloader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#030B08] text-white transition-all duration-1000 ease-out">
-        <div class="absolute w-[300px] h-[300px] bg-emerald-500/20 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
+    <!-- Perfect Split-Screen Video Intro Splash Screen -->
+    <div id="video-preloader" class="fixed inset-0 z-50 overflow-hidden pointer-events-auto flex">
+        <!-- Left Half Panel -->
+        <div id="panel-left" class="w-1/2 h-full overflow-hidden relative transition-transform duration-1000 ease-in-out z-40 bg-black">
+            <video autoplay muted playsinline class="fixed top-0 left-0 w-screen h-screen object-cover hidden sm:block opacity-90">
+                <source src="{{ url_for('static', filename='videos/ship-intro.mp4') }}" type="video/mp4">
+            </video>
+            <video autoplay muted playsinline class="fixed top-0 left-0 w-screen h-screen object-cover block sm:hidden opacity-100">
+                <source src="{{ url_for('static', filename='videos/ship-intro-mobile.mp4') }}" type="video/mp4">
+            </video>
+        </div>
 
-        <div class="relative flex flex-col items-center space-y-6 z-10 text-center px-4">
-            <div class="brand-mark w-20 h-20 rounded-3xl flex items-center justify-center text-4xl shadow-2xl shadow-emerald-500/30 transform transition-transform duration-1000 hover:scale-110 border border-emerald-400/30 animate-bounce">
-                🌐
-            </div>
-            
-            <div class="space-y-2 overflow-hidden">
-                <h1 class="font-display text-2xl sm:text-4xl font-black tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-emerald-400 to-teal-200">
-                    FUTURE SOLUTIONS
+        <!-- Right Half Panel -->
+        <div id="panel-right" class="w-1/2 h-full overflow-hidden relative transition-transform duration-1000 ease-in-out z-40 bg-black">
+            <video autoplay muted playsinline class="fixed top-0 left-0 w-screen h-screen object-cover hidden sm:block opacity-100">
+                <source src="{{ url_for('static', filename='videos/ship-intro.mp4') }}" type="video/mp4">
+            </video>
+            <video autoplay muted playsinline class="fixed top-0 left-0 w-screen h-screen object-cover block sm:hidden opacity-90">
+                <source src="{{ url_for('static', filename='videos/ship-intro-mobile.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Center Content & Skip Button -->
+        <div id="preloader-content" class="absolute inset-0 z-50 flex flex-col items-center justify-center transition-opacity duration-500 pointer-events-auto bg-black/40 backdrop-blur-xs">
+            <div class="text-center space-y-3 px-4">
+                <h1 class="font-display text-3xl sm:text-5xl font-extrabold tracking-widest text-white drop-shadow-lg">
+                    FUTURE <span class="text-purple-400">SOLUTIONS</span>
                 </h1>
-                <div class="flex items-center justify-center gap-2">
-                    <span class="h-[1px] w-8 bg-emerald-500/50"></span>
-                    <p class="text-[10px] sm:text-xs tracking-[0.4em] text-emerald-400 uppercase font-semibold">
-                        Global Logistics & Supply Chain
-                    </p>
-                    <span class="h-[1px] w-8 bg-emerald-500/50"></span>
-                </div>
+                <p class="text-xs sm:text-sm tracking-[0.4em] text-purple-300 uppercase font-bold drop-shadow">
+                    Entering Global Maritime Network...
+                </p>
             </div>
 
-            <div class="w-36 h-1 bg-emerald-950 rounded-full overflow-hidden mt-4 border border-emerald-500/20">
-                <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-300 animate-[loading_1.5s_cubic-bezier(0.4,0,0.2,1)_infinite]"></div>
-            </div>
+            <button onclick="closeVideoPreloader()" class="absolute bottom-10 z-50 px-6 py-2.5 rounded-xl bg-purple-600/85 hover:bg-purple-600 text-white font-bold text-xs uppercase tracking-wider backdrop-blur-md transition-all border border-purple-400/40 shadow-xl cursor-pointer">
+                Skip Intro &rarr;
+            </button>
         </div>
     </div>
 
     <!-- Top Corporate Bar with 3D Glassmorphism -->
-    <header class="w-full glass px-3 sm:px-6 py-3.5 flex items-center justify-between sticky top-0 z-50 transition-colors duration-300 border-b border-emerald-500/20">
+    <header class="w-full glass px-3 sm:px-6 py-3.5 flex items-center justify-between sticky top-0 z-40 transition-colors duration-300 border-b border-purple-500/20">
         <div class="flex items-center space-x-2 sm:space-x-3">
             <button onclick="toggleMobileSidebar()" class="md:hidden p-2 rounded-xl glass text-slate-700 dark:text-slate-200 focus:outline-none btn-3d">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -185,38 +190,38 @@
                 🌐
             </div>
             <div>
-                <a href="{{ url_for('index') }}" class="font-display text-xs sm:text-lg font-extrabold tracking-wide block leading-tight">FUTURE <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-gold to-goldLight">SOLUTIONS</span></a>
+                <a href="{{ url_for('index') }}" class="font-display text-xs sm:text-lg font-extrabold tracking-wide block leading-tight">FUTURE <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-gold to-goldLight">SOLUTIONS</span></a>
                 <span class="hidden sm:block text-[9px] tracking-[0.25em] text-slate-500 dark:text-slate-400 uppercase font-extrabold">Global Logistics & Supply Chain</span>
             </div>
         </div>
 
         <div class="flex items-center space-x-2 sm:space-x-3">
-            <a href="{{ url_for('index') }}#tracking" class="cta-shimmer btn-3d flex items-center gap-1.5 bg-gradient-to-r from-emerald-600 via-gold to-goldLight text-white dark:text-[#030B08] text-[10px] sm:text-xs font-black px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl transition-all">
+            <a href="{{ url_for('index') }}#tracking" class="cta-shimmer btn-3d flex items-center gap-1.5 bg-gradient-to-r from-purple-600 via-gold to-goldLight text-white dark:text-[#090510] text-[10px] sm:text-xs font-black px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl transition-all">
                 <span>📍</span> <span class="hidden xs:inline">Track</span><span> Shipment</span>
             </a>
 
             {% if session.get('admin_logged_in') %}
-                <a href="{{ url_for('admin_dashboard') }}" class="btn-3d text-[10px] sm:text-xs font-extrabold uppercase tracking-wider bg-gradient-to-r from-emerald-600 to-gold text-white dark:text-[#030B08] px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl transition-all">
+                <a href="{{ url_for('admin_dashboard') }}" class="btn-3d text-[10px] sm:text-xs font-extrabold uppercase tracking-wider bg-gradient-to-r from-purple-600 to-gold text-white dark:text-[#090510] px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl transition-all">
                     Dashboard
                 </a>
                 <a href="{{ url_for('admin_logout') }}" class="btn-3d text-[10px] sm:text-xs font-extrabold uppercase tracking-wider bg-red-500/10 text-red-600 border border-red-300 dark:border-red-900 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl transition-all">
                     Logout
                 </a>
             {% else %}
-                <a href="{{ url_for('admin_login') }}" class="btn-3d text-[10px] sm:text-xs font-extrabold uppercase tracking-wider glass text-emerald-800 dark:text-gold border border-emerald-500/40 dark:border-gold/30 px-2.5 sm:px-3.5 py-2 sm:py-2.5 rounded-xl transition-all flex items-center gap-1">
+                <a href="{{ url_for('admin_login') }}" class="btn-3d text-[10px] sm:text-xs font-extrabold uppercase tracking-wider glass text-purple-800 dark:text-gold border border-purple-500/40 dark:border-gold/30 px-2.5 sm:px-3.5 py-2 sm:py-2.5 rounded-xl transition-all flex items-center gap-1">
                     <span>🔒</span> <span class="hidden sm:inline">Admin</span>
                 </a>
             {% endif %}
 
-            <button onclick="toggleTheme()" class="btn-3d p-2 sm:p-2.5 rounded-xl glass text-slate-800 dark:text-gold text-xs sm:text-sm border border-emerald-500/40 dark:border-slate-700 transition-all" title="Toggle Theme">
+            <button onclick="toggleTheme()" class="btn-3d p-2 sm:p-2.5 rounded-xl glass text-slate-800 dark:text-gold text-xs sm:text-sm border border-purple-500/40 dark:border-slate-700 transition-all" title="Toggle Theme">
                 <span id="theme-icon">🌙</span>
             </button>
         </div>
     </header>
 
     <div class="flex flex-col md:flex-row flex-grow relative w-full">
-        <aside id="sidebar" class="fixed md:sticky top-[69px] left-0 h-[calc(100vh-69px)] w-72 glass border-r border-emerald-500/20 dark:border-emerald-500/15 p-6 flex flex-col justify-between z-40 transform -translate-x-full md:translate-x-0 transition-all duration-300">
-            <button onclick="toggleSidebar()" class="btn-3d hidden md:flex absolute -right-3.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-gradient-to-br from-emerald-600 to-gold text-white dark:text-[#030B08] items-center justify-center text-sm hover:scale-110 transition-transform z-50 focus:outline-none border-2 border-white dark:border-[#030B08]" title="Toggle Sidebar">
+        <aside id="sidebar" class="fixed md:sticky top-[69px] left-0 h-[calc(100vh-69px)] w-72 glass border-r border-purple-500/20 dark:border-purple-500/15 p-6 flex flex-col justify-between z-30 transform -translate-x-full md:translate-x-0 transition-all duration-300">
+            <button onclick="toggleSidebar()" class="btn-3d hidden md:flex absolute -right-3.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-gradient-to-br from-purple-600 to-gold text-white dark:text-[#090510] items-center justify-center text-sm hover:scale-110 transition-transform z-50 focus:outline-none border-2 border-white dark:border-[#090510]" title="Toggle Sidebar">
                 <span id="toggle-icon" class="font-black">&lsaquo;</span>
             </button>
 
@@ -249,7 +254,7 @@
                 </a>
             </nav>
 
-            <div class="nav-footer pt-4 mt-4 border-t border-emerald-500/20 dark:border-slate-800 text-[11px] text-slate-500 text-center font-semibold truncate transition-all duration-200">
+            <div class="nav-footer pt-4 mt-4 border-t border-purple-500/20 dark:border-slate-800 text-[11px] text-slate-500 text-center font-semibold truncate transition-all duration-200">
                 &copy; 2026 Future Solutions
             </div>
         </aside>
@@ -259,14 +264,15 @@
         </main>
     </div>
 
-    <aside aria-label="Social Media Links Desktop" class="hidden sm:flex fixed right-4 top-[50%] -translate-y-1/2 z-50 flex-col gap-2.5 p-2.5 glass rounded-2xl transition-all shadow-2xl">
-        <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" title="WhatsApp" class="social-icon w-10 h-10 rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-600 hover:text-white flex items-center justify-center font-bold shadow-sm">
+    <!-- Desktop Social Media -->
+    <aside aria-label="Social Media Links Desktop" class="hidden sm:flex fixed right-4 top-[50%] -translate-y-1/2 z-40 flex-col gap-2.5 p-2.5 glass rounded-2xl transition-all shadow-2xl">
+        <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" title="WhatsApp" class="social-icon w-10 h-10 rounded-xl bg-purple-500/10 hover:bg-purple-500 text-purple-600 hover:text-white flex items-center justify-center font-bold shadow-sm">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.371l-.361-.214-3.732.982 .998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.84 9.84 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.49 0 .16 5.33.158 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.558 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </a>
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon w-10 h-10 rounded-xl bg-pink-500/10 hover:bg-pink-600 text-pink-600 hover:text-white flex items-center justify-center font-bold shadow-sm">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook" class="social-icon w-10 h-10 rounded-xl bg-blue-600/10 hover:bg-blue-600 text-blue-600 hover:text-white flex items-center justify-center font-bold shadow-sm">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook" class="social-icon w-10 h-10 rounded-xl bg-blue-600/10 text-blue-600 flex items-center justify-center font-bold shadow-sm">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
         </a>
         <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" title="TikTok" class="social-icon w-10 h-10 rounded-xl bg-slate-900/10 dark:bg-slate-100/10 hover:bg-black hover:text-white text-slate-800 dark:text-slate-200 flex items-center justify-center font-bold shadow-sm">
@@ -274,24 +280,6 @@
         </a>
         <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" title="YouTube" class="social-icon w-10 h-10 rounded-xl bg-red-500/10 hover:bg-red-600 text-red-600 hover:text-white flex items-center justify-center font-bold shadow-sm">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </a>
-    </aside>
-
-    <aside aria-label="Social Media Links Mobile" class="sm:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-50 flex flex-row gap-2 p-2 glass rounded-2xl shadow-2xl">
-        <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" title="WhatsApp" class="social-icon w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold shadow-sm">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.371l-.361-.214-3.732.982 .998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.84 9.84 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.49 0 .16 5.33.158 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.558 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon w-9 h-9 rounded-xl bg-pink-500/10 text-pink-600 flex items-center justify-center font-bold shadow-sm">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook" class="social-icon w-9 h-9 rounded-xl bg-blue-600/10 text-blue-600 flex items-center justify-center font-bold shadow-sm">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-        </a>
-        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" title="TikTok" class="social-icon w-9 h-9 rounded-xl bg-slate-900/10 text-slate-800 dark:text-slate-200 flex items-center justify-center font-bold shadow-sm">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
-        </a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" title="YouTube" class="social-icon w-9 h-9 rounded-xl bg-red-500/10 text-red-600 flex items-center justify-center font-bold shadow-sm">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         </a>
     </aside>
 
@@ -325,71 +313,41 @@
     </script>
 
     <script>
+    function closeVideoPreloader() {
+        const preloader = document.getElementById('video-preloader');
+        const panelLeft = document.getElementById('panel-left');
+        const panelRight = document.getElementById('panel-right');
+        const content = document.getElementById('preloader-content');
+        
+        if(content) content.style.opacity = '0';
+        
+        if(panelLeft && panelRight) {
+            panelLeft.style.transform = 'translateX(-100%)';
+            panelRight.style.transform = 'translateX(100%)';
+        }
+
+        setTimeout(() => {
+            if(preloader) preloader.style.display = 'none';
+        }, 1000);
+    }
+
+    // Check if we are on the homepage
+    const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('index');
+
+    if (isHome && !sessionStorage.getItem('homeVisitedDuringSession')) {
+        sessionStorage.setItem('homeVisitedDuringSession', 'true');
         window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
             setTimeout(() => {
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 1000);
-            }, 1500);
+                closeVideoPreloader();
+            }, 3800);
         });
-
-        function toggleTheme() {
-            const html = document.getElementById('html-root');
-            const icon = document.getElementById('theme-icon');
-
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-                if(icon) icon.textContent = '🌙';
-            } else {
-                html.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-                if(icon) icon.textContent = '☀️';
-            }
-        }
-
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.getElementById('html-root').classList.add('dark');
-            if(document.getElementById('theme-icon')) document.getElementById('theme-icon').textContent = '☀️';
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            let isClickScrolling = false;
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    isClickScrolling = true;
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-
-                    setTimeout(() => {
-                        isClickScrolling = false;
-                    }, 800);
-                });
-            });
-
-            const observer = new IntersectionObserver((entries) => {
-                if (isClickScrolling) return;
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
-                            if (link.getAttribute('href').endsWith(`#${id}`)) {
-                                link.classList.add('active');
-                            } else {
-                                link.classList.remove('active');
-                            }
-                        });
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            sections.forEach(section => observer.observe(section));
+    } else {
+        // Services page lo unnappudu leda home ki malli vachinappudu preloader direct ga hide aipovali
+        document.addEventListener('DOMContentLoaded', () => {
+            const preloader = document.getElementById('video-preloader');
+            if(preloader) preloader.style.display = 'none';
         });
-    </script>
+    }
+</script>
 </body>
 </html>
