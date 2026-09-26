@@ -1,0 +1,20 @@
+{
+  "name": "Future Solutions Logistics",
+  "short_name": "Future Solutions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090510",
+  "theme_color": "#A855F7",
+  "icons": [
+    {
+      "src": "/static/images/hero.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/images/hero.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
